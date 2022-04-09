@@ -15,6 +15,9 @@ class VideoPlayerViewController: UIViewController {
     @IBOutlet weak var soundButton: UIButton!
     @IBOutlet weak var fullScreenButton: UIButton!
     
+    let microphoneImage = UIImage(systemName: "mic.fill")
+    let slashMicrophoneImage = UIImage(systemName: "mic.slash.fill")
+    
     var player: AVPlayer?
     var playerLayer: AVPlayerLayer?
     var isPlaying = true
@@ -69,10 +72,10 @@ class VideoPlayerViewController: UIViewController {
         
         if player.isMuted {
             player.isMuted = false
-            soundButton.setImage(UIImage(systemName: "mic.fill"), for: .normal)
+            soundButton.setImage(microphoneImage, for: .normal)
         } else {
             player.isMuted = true
-            soundButton.setImage(UIImage(systemName: "mic.slash.fill"), for: .normal)
+            soundButton.setImage(slashMicrophoneImage, for: .normal)
         }
         
     }
@@ -90,8 +93,8 @@ class VideoPlayerViewController: UIViewController {
         
         guard let isMuted = isMuted else { return }
         player?.isMuted = isMuted
-        if (isMuted) { soundButton.setImage(UIImage(systemName: "mic.slash.fill"), for: .normal) }
-        else { soundButton.setImage(UIImage(systemName: "mic.fill"), for: .normal) }
+        if (isMuted) { soundButton.setImage(slashMicrophoneImage, for: .normal) }
+        else { soundButton.setImage(microphoneImage, for: .normal) }
     }
     
 }

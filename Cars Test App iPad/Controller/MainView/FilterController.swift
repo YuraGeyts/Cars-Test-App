@@ -40,7 +40,6 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         filteredCars = []
         
         if selectedFilter == filterComponents[0] {
-            print("WITHOUT FILTER")
             isFiltering = false
         } else {
             isFiltering = true

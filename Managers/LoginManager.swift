@@ -79,10 +79,6 @@ class LoginManager {
         }
     }
     
-    static func login(vc: UIViewController) {
-        //starting viewController
-    }
-    
     static func logOut() {
         let defaults = UserDefaults.standard
         let loginKey = LoginKeys.userLogin.rawValue
