@@ -45,6 +45,8 @@ Video widgets have the same rules as from previous screen.
 What is done:
 -All three levels
 -App for iPhone and iPad
+  Application for iPad - according to the graphic task
+  The application for iPhone is made in its own way
 
 What we used:
 -UserDefaults for save login and password
