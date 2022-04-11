@@ -47,6 +47,7 @@ What is done:
 -App for iPhone and iPad
   Application for iPad - according to the graphic task
   The application for iPhone is made in its own way
+-Custom filter in iPad-version, using Cocoapods 'DropDown'
 
 What we used:
 -UserDefaults for save login and password
@@ -54,9 +55,10 @@ What we used:
 -JSON Parsing
 -AVPlayer to show video
 -TableView to show car list
+-Cocoapods
 
 What needs to be done:
--Custom view for filter
+-Refactor
 
 
 
