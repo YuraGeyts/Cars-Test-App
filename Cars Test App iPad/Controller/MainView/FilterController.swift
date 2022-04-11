@@ -7,33 +7,49 @@
 
 import Foundation
 import UIKit
+import DropDown
 
-extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension MainViewController {
     
-    //MARK: - AlertView
+    //MARK: - Filter
     
     func openFilter()  {
-        let vc = UIViewController()
-        vc.preferredContentSize = CGSize(width: 250, height: 250)
+        dropDown.anchorView = filterButton
+        dropDown.direction = .any
+        dropDown.dataSource = filterComponents
         
-        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        vc.view.addSubview(pickerView)
+        dropDown.cellNib = UINib(nibName: "FilterCell", bundle: nil)
         
-        let alert = UIAlertController(title: "Filter", message: nil, preferredStyle: .alert)
-        alert.setValue(vc, forKey: "contentViewController")
+        dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            guard let cell = cell as? FilterCell else { return }
+            
+            switch item {
+            case "No filter":
+                cell.colorImage.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            case "Available":
+                cell.colorImage.tintColor = UIColor(red: 0.733, green: 0.984, blue: 0.789, alpha: 1)
+            case "Hidden":
+                cell.colorImage.tintColor = UIColor(red: 0.082, green: 0.396, blue: 0.753, alpha: 1)
+            case "Disabled":
+                cell.colorImage.tintColor = UIColor(red: 0.984, green: 0.914, blue: 0.733, alpha: 1)
+            default:
+                break
+            }
+        }
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
-            let selectedRow = pickerView.selectedRow(inComponent: 0)
-            self.selectedFilter = self.filterComponents[selectedRow]
+        dropDown.selectionAction = { (index: Int, item: String) in
+            print("Selected item: \(item)")
+            self.selectedFilter = item
             self.filter()
-        }))
+        }
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        DropDown.appearance().cellHeight = 66
+        DropDown.appearance().textFont = UIFont.systemFont(ofSize: 20)
+        DropDown.appearance().backgroundColor = UIColor(red: 0.733, green: 0.871, blue: 0.984, alpha: 0.8)
         
-        self.present(alert, animated: true)
+        dropDown.show()
     }
+    
     
     //MARK: - Filter
     func filter() {
@@ -57,18 +73,5 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         }
         filterButton.setTitle(selectedFilter, for: .normal)
         carsTableView.reloadData()
-    }
-    
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return filterComponents.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return filterComponents[row]
     }
 }

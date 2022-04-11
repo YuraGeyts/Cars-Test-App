@@ -6,20 +6,23 @@
 //
 
 import UIKit
+import DropDown
 
 class MainViewController: UIViewController {
     
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var carsTableView: UITableView!
-    
     @IBOutlet weak var userNameLabel: UILabel!
+    
+    
     //Filter
+    let dropDown = DropDown()
     var cars: [Car]?
     var filteredCars: [Car] = []
     var isFiltering = false
     
     var selectedFilter = "No filter"
-    var filterComponents = ["No filter", "Hidden", "Available", "Disabled"]
+    var filterComponents = ["No filter", "Available", "Hidden", "Disabled"]
     
     //Timer
     var counter = 0
