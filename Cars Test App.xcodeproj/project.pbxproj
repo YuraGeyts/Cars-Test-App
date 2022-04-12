@@ -39,6 +39,7 @@
 		3AB7690F27FE0B0D00FD9C9B /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A08D53927F8C79D0025C516 /* LoginManager.swift */; };
 		3AB7691127FE0D2B00FD9C9B /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7691027FE0D2B00FD9C9B /* FilterController.swift */; };
 		3AB7691327FE206E00FD9C9B /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7691227FE206E00FD9C9B /* VideoPlayerViewController.swift */; };
+		3AFDDEB52805BAA200BB2903 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFDDEB42805BAA200BB2903 /* Colors.swift */; };
 		4A6C272736B41406E9DE7705 /* Pods_Cars_Test_App_iPad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B79160B9F33DBB4371F0E19 /* Pods_Cars_Test_App_iPad.framework */; };
 		FDE27DDB43CF71335FEE8B07 /* Pods_Cars_Test_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4163520268C69B21358BE3B6 /* Pods_Cars_Test_App.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		3AB7690C27FE062A00FD9C9B /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
 		3AB7691027FE0D2B00FD9C9B /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		3AB7691227FE206E00FD9C9B /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		3AFDDEB42805BAA200BB2903 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4163520268C69B21358BE3B6 /* Pods_Cars_Test_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cars_Test_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		419E91473E1CD9A71771B203 /* Pods-Cars Test App iPad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cars Test App iPad.debug.xcconfig"; path = "Target Support Files/Pods-Cars Test App iPad/Pods-Cars Test App iPad.debug.xcconfig"; sourceTree = "<group>"; };
 		4EA88EBB06E0345CC10B421B /* Pods-Cars Test App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cars Test App.release.xcconfig"; path = "Target Support Files/Pods-Cars Test App/Pods-Cars Test App.release.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		3AB7690827FE02D000FD9C9B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3AFDDEB42805BAA200BB2903 /* Colors.swift */,
 				3A08D52D27F8BF3B0025C516 /* Main.storyboard */,
 				3A08D53227F8BF3C0025C516 /* LaunchScreen.storyboard */,
 				3AB7690C27FE062A00FD9C9B /* CarTableViewCell.swift */,
@@ -435,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AB7690B27FE038800FD9C9B /* CarsListTableViewExtension.swift in Sources */,
+				3AFDDEB52805BAA200BB2903 /* Colors.swift in Sources */,
 				3AB7690D27FE062A00FD9C9B /* CarTableViewCell.swift in Sources */,
 				3AB7690627FE028700FD9C9B /* CarsModel.swift in Sources */,
 				3A34CDE92800A0FD000C8C23 /* LogoutAndUsername.swift in Sources */,

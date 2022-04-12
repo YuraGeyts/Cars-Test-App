@@ -15,31 +15,29 @@ extension MainViewController {
     
     func openFilter()  {
         dropDown.anchorView = filterButton
-        dropDown.direction = .any
-        dropDown.dataSource = filterComponents
+        dropDown.direction = .bottom
+        dropDown.dataSource = FilterComponents.filterDataSource
         
         dropDown.cellNib = UINib(nibName: "FilterCell", bundle: nil)
         
         dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
             guard let cell = cell as? FilterCell else { return }
+            let filterComponent = FilterComponents.allFilters[index]
             
-            switch item {
-            case "No filter":
+            switch filterComponent {
+            case .noFilter:
                 cell.colorImage.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
-            case "Available":
-                cell.colorImage.tintColor = UIColor(red: 0.733, green: 0.984, blue: 0.789, alpha: 1)
-            case "Hidden":
-                cell.colorImage.tintColor = UIColor(red: 0.082, green: 0.396, blue: 0.753, alpha: 1)
-            case "Disabled":
-                cell.colorImage.tintColor = UIColor(red: 0.984, green: 0.914, blue: 0.733, alpha: 1)
-            default:
-                break
+            case .available:
+                cell.colorImage.tintColor = Colors.availableFilterColor
+            case .hidden:
+                cell.colorImage.tintColor = Colors.hiddenFilterColor
+            case .disabled:
+                cell.colorImage.tintColor = Colors.disabledFilterColor
             }
         }
         
         dropDown.selectionAction = { (index: Int, item: String) in
-            print("Selected item: \(item)")
-            self.selectedFilter = item
+            self.selectedFilter = FilterComponents.allFilters[index]
             self.filter()
         }
         
@@ -55,13 +53,13 @@ extension MainViewController {
     func filter() {
         filteredCars = []
         
-        if selectedFilter == filterComponents[0] {
+        if selectedFilter == FilterComponents.noFilter {
             isFiltering = false
         } else {
             isFiltering = true
             print(selectedFilter)
             //ChangeButtonText navigationBar.topItem?.title = selectedFilter
-            let selectedState = selectedFilter.lowercased()
+            let selectedState = selectedFilter.rawValue.lowercased()
             
             guard let cars = cars else { return }
             
@@ -71,7 +69,7 @@ extension MainViewController {
                 }
             }
         }
-        filterButton.setTitle(selectedFilter, for: .normal)
+        filterButton.setTitle(selectedFilter.rawValue, for: .normal)
         carsTableView.reloadData()
     }
 }

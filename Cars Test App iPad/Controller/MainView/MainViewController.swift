@@ -14,15 +14,24 @@ class MainViewController: UIViewController {
     @IBOutlet weak var carsTableView: UITableView!
     @IBOutlet weak var userNameLabel: UILabel!
     
-    
     //Filter
     let dropDown = DropDown()
     var cars: [Car]?
     var filteredCars: [Car] = []
     var isFiltering = false
     
-    var selectedFilter = "No filter"
-    var filterComponents = ["No filter", "Available", "Hidden", "Disabled"]
+    enum FilterComponents: String {
+        case noFilter = "No filter"
+        case available = "Available"
+        case hidden = "Hidden"
+        case disabled = "Disabled"
+        
+        static let allFilters = [noFilter, available, hidden, disabled]
+        static let filterDataSource = [noFilter.rawValue, available.rawValue, hidden.rawValue, disabled.rawValue]
+    }
+    
+    var selectedFilter = FilterComponents.noFilter
+  
     
     //Timer
     var counter = 0

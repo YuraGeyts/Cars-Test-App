@@ -22,11 +22,11 @@ class CarTableViewCell: UITableViewCell {
         
         switch car.state {
         case "available":
-            background.backgroundColor = UIColor(red: 0.733, green: 0.984, blue: 0.789, alpha: 1)
+            background.backgroundColor = Colors.availableColor
         case "hidden":
-            background.backgroundColor = UIColor(red: 0.733, green: 0.871, blue: 0.984, alpha: 1)
+            background.backgroundColor = Colors.hiddenColor
         case "disabled":
-            background.backgroundColor = UIColor(red: 0.984, green: 0.914, blue: 0.733, alpha: 1)
+            background.backgroundColor = Colors.disabledColor
         default:
             break
         }
