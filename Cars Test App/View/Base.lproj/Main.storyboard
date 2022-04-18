@@ -27,13 +27,21 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h9F-U3-7sQ">
-                                        <rect key="frame" x="0.0" y="48.5" width="275" height="34"/>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h9F-U3-7sQ">
+                                        <rect key="frame" x="0.0" y="40.5" width="275" height="0.0"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="TrU-V1-svx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fq9-nS-L4s">
+                                        <rect key="frame" x="0.0" y="48.5" width="275" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="CQe-sE-IWx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DIe-Bk-xAZ">
                                         <rect key="frame" x="0.0" y="98.5" width="275" height="34"/>
@@ -41,7 +49,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="3jp-1o-ONd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zF-jN-VuY">
                                         <rect key="frame" x="70" y="148.5" width="135" height="30"/>
@@ -63,16 +71,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCA-gv-fkX">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCA-gv-fkX">
                                         <rect key="frame" x="70" y="231" width="135" height="30"/>
-                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="135" id="1Z6-fS-PQg"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="LIVE VIDEO">
-                                            <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="SIGN UP">
+                                            <color key="titleColor" name="AccentColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fn7-Q0-V1H"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -86,13 +96,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="0a3-2d-hYo"/>
                     <connections>
-                        <outlet property="loginTextField" destination="h9F-U3-7sQ" id="yoT-CU-tfG"/>
+                        <outlet property="emailTextField" destination="Fq9-nS-L4s" id="Uis-DF-fb7"/>
                         <outlet property="passwordTextField" destination="DIe-Bk-xAZ" id="Bth-mn-pMK"/>
+                        <outlet property="signInButton" destination="1zF-jN-VuY" id="CQ0-Xd-rMj"/>
+                        <outlet property="signUpButton" destination="lCA-gv-fkX" id="kVq-hE-7JH"/>
+                        <outlet property="usernameTextField" destination="h9F-U3-7sQ" id="atQ-NJ-HZs"/>
+                        <outlet property="welcomeLabel" destination="d4j-cQ-rKr" id="FZd-7y-fu3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2671" y="66"/>
+            <point key="canvasLocation" x="2688" y="66"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="0Df-9f-rQ3">
@@ -106,7 +120,6 @@
                     <connections>
                         <segue destination="7hs-p3-gfB" kind="relationship" relationship="viewControllers" id="ubC-RF-Nts"/>
                         <segue destination="1BX-g3-38e" kind="relationship" relationship="viewControllers" id="CSR-2F-2RV"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginSegue" id="jl5-vF-Jja"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voI-Oo-RKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -364,12 +377,6 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
