@@ -25,60 +25,30 @@ class VideoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        NotificationCenter.default.addObserver(self, selector: #selector(reloadView(notification:)), name: Notification.Name("ReloadView"), object: nil)
-//
-//        getAndShowUserLogin()
-//        //Add gestureRecogniser
-//        let firstPlayerTap = UITapGestureRecognizer(target: self, action: #selector(self.firstViewTap))
-//        firstPlayerViewContainer.addGestureRecognizer(firstPlayerTap)
-//
-//        let firstPlayerDoubleTap = UITapGestureRecognizer(target: self, action: #selector(firstViewDoubleTapped))
-//        firstPlayerDoubleTap.numberOfTapsRequired = 2
-//        firstPlayerViewContainer.addGestureRecognizer(firstPlayerDoubleTap)
-//
-//        firstPlayerViewContainer.isUserInteractionEnabled = true
-//        firstPlayerTap.require(toFail: firstPlayerDoubleTap)
-//
-//        let secondPlayerTap = UITapGestureRecognizer(target: self, action: #selector(self.secondViewTap))
-//        secondPlayerViewContainer.addGestureRecognizer(secondPlayerTap)
-//
-//        let secondPlayerDoubleTap = UITapGestureRecognizer(target: self, action: #selector(secondViewDoubleTapped))
-//        secondPlayerDoubleTap.numberOfTapsRequired = 2
-//        secondPlayerViewContainer.addGestureRecognizer(secondPlayerDoubleTap)
-//
-//        secondPlayerViewContainer.isUserInteractionEnabled = true
-//        secondPlayerTap.require(toFail: secondPlayerDoubleTap)
-//
-//        topPlayer = showVideoInView(uiView: firstPlayerViewContainer, videoURL: firstVideo)
-//        bottomPlayer = showVideoInView(uiView: secondPlayerViewContainer, videoURL: secondVideo)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadView(notification:)), name: Notification.Name("ReloadView"), object: nil)
-        
+
         getAndShowUserLogin()
         //Add gestureRecogniser
         let firstPlayerTap = UITapGestureRecognizer(target: self, action: #selector(self.firstViewTap))
         firstPlayerViewContainer.addGestureRecognizer(firstPlayerTap)
-        
+
         let firstPlayerDoubleTap = UITapGestureRecognizer(target: self, action: #selector(firstViewDoubleTapped))
         firstPlayerDoubleTap.numberOfTapsRequired = 2
         firstPlayerViewContainer.addGestureRecognizer(firstPlayerDoubleTap)
-        
+
         firstPlayerViewContainer.isUserInteractionEnabled = true
         firstPlayerTap.require(toFail: firstPlayerDoubleTap)
-        
+
         let secondPlayerTap = UITapGestureRecognizer(target: self, action: #selector(self.secondViewTap))
         secondPlayerViewContainer.addGestureRecognizer(secondPlayerTap)
-        
+
         let secondPlayerDoubleTap = UITapGestureRecognizer(target: self, action: #selector(secondViewDoubleTapped))
         secondPlayerDoubleTap.numberOfTapsRequired = 2
         secondPlayerViewContainer.addGestureRecognizer(secondPlayerDoubleTap)
-        
+
         secondPlayerViewContainer.isUserInteractionEnabled = true
         secondPlayerTap.require(toFail: secondPlayerDoubleTap)
-        
+
         topPlayer = showVideoInView(uiView: firstPlayerViewContainer, videoURL: firstVideo)
         bottomPlayer = showVideoInView(uiView: secondPlayerViewContainer, videoURL: secondVideo)
     }

@@ -94,7 +94,7 @@ class LoginViewController: UIViewController {
                     case .invalidEmail:
                         self.showAlert(message: "Invalid email")
                     case .userNotFound:
-                        print("USER NOT FOUND")
+                        self.showAlert(message: "User not found")
                     @unknown default:
                         print("Some default error")
                     }
@@ -114,7 +114,7 @@ class LoginViewController: UIViewController {
                     self.dismiss(animated: true)
                 }
             } else {
-                print("Register error: \(error)")
+                print("Register error: \(String(describing: error))")
             }
         }
     }

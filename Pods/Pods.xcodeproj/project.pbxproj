@@ -1431,7 +1431,7 @@
 		362938876C4FA316DC5316F1C92578D2 /* FIRStartMFAEnrollmentResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRStartMFAEnrollmentResponse.m; path = FirebaseAuth/Sources/Backend/RPC/MultiFactor/Enroll/FIRStartMFAEnrollmentResponse.m; sourceTree = "<group>"; };
 		3644309EE371DAD31124D4D53EFB147C /* FIRCoreDiagnostics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRCoreDiagnostics.h; path = Firebase/CoreDiagnostics/FIRCDLibrary/Public/FIRCoreDiagnostics.h; sourceTree = "<group>"; };
 		367CD36E4787881C691A6071046A47E1 /* FIRFinalizeMFAEnrollmentResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRFinalizeMFAEnrollmentResponse.m; path = FirebaseAuth/Sources/Backend/RPC/MultiFactor/Enroll/FIRFinalizeMFAEnrollmentResponse.m; sourceTree = "<group>"; };
-		36F3D7271D857A2FD495401CBC8367B6 /* Pods-Cars Test App */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Cars Test App"; path = Pods_Cars_Test_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36F3D7271D857A2FD495401CBC8367B6 /* Pods_Cars_Test_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cars_Test_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		371C6EE2AA4C5289BED24EC1EBE5C505 /* GDTCORTargets.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GDTCORTargets.h; path = GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCORTargets.h; sourceTree = "<group>"; };
 		37B710A54E5E8068E8C4E6723EBED2BF /* FTransformedEnumerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FTransformedEnumerator.m; path = FirebaseDatabase/Sources/FTransformedEnumerator.m; sourceTree = "<group>"; };
 		37BB41892926A65B293EC80088564E3B /* FIRAdditionalUserInfo_Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAdditionalUserInfo_Internal.h; path = FirebaseAuth/Sources/User/FIRAdditionalUserInfo_Internal.h; sourceTree = "<group>"; };
@@ -2466,7 +2466,7 @@
 				C1998E0D8085221AD87F89B614C10E52 /* GTMSessionFetcher.framework */,
 				0A9F46A999C47653013D3AD854352507 /* leveldb.framework */,
 				06FC5C9CF96D60C50FCD47D339C91951 /* nanopb.framework */,
-				36F3D7271D857A2FD495401CBC8367B6 /* Pods-Cars Test App */,
+				36F3D7271D857A2FD495401CBC8367B6 /* Pods_Cars_Test_App.framework */,
 				0170291C7AEE76A1C132295B8EADC65C /* Pods-Cars Test App iPad */,
 				3347A1AB6546F0A3977529B8F199DC41 /* FBLPromises.framework */,
 			);
@@ -4329,7 +4329,7 @@
 			);
 			name = "Pods-Cars Test App";
 			productName = Pods_Cars_Test_App;
-			productReference = 36F3D7271D857A2FD495401CBC8367B6 /* Pods-Cars Test App */;
+			productReference = 36F3D7271D857A2FD495401CBC8367B6 /* Pods_Cars_Test_App.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		736AF68F6527ACF6B4A4C54728824A1C /* FirebaseDatabase */ = {
