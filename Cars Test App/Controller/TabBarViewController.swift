@@ -16,7 +16,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        LoginManager.checkLogin(vc: self)
+//        LoginManager.checkLogin(vc: self)
     }
 
 }

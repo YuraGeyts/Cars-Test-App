@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -18,14 +19,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         guard let _ = (scene as? UIWindowScene) else { return }
-//        
-//        if LoginManager.userLogin == nil {
-//            let window = UIWindow(windowScene: windowScene)
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            window.rootViewController = storyboard.instantiateViewController(withIdentifier: "loginView")
-//            self.window = window
-//            window.makeKeyAndVisible()
-//        }
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if user == nil {
+                print("Try to open auth")
+                self.showModalAuth()
+            }
+        }
+        
+    }
+    
+    func showModalAuth() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "loginView") as! LoginViewController
+        self.window?.rootViewController?.present(loginVC, animated: true, completion: nil)
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

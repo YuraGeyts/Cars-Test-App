@@ -27,13 +27,21 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h9F-U3-7sQ">
-                                        <rect key="frame" x="0.0" y="48.5" width="275" height="34"/>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h9F-U3-7sQ">
+                                        <rect key="frame" x="0.0" y="40.5" width="275" height="0.0"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="TrU-V1-svx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fq9-nS-L4s">
+                                        <rect key="frame" x="0.0" y="48.5" width="275" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="CQe-sE-IWx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DIe-Bk-xAZ">
                                         <rect key="frame" x="0.0" y="98.5" width="275" height="34"/>
@@ -41,7 +49,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="3jp-1o-ONd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zF-jN-VuY">
                                         <rect key="frame" x="70" y="148.5" width="135" height="30"/>
@@ -63,16 +71,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCA-gv-fkX">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCA-gv-fkX">
                                         <rect key="frame" x="70" y="231" width="135" height="30"/>
-                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="135" id="1Z6-fS-PQg"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="LIVE VIDEO">
-                                            <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="SIGN UP">
+                                            <color key="titleColor" name="AccentColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fn7-Q0-V1H"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -86,13 +96,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="0a3-2d-hYo"/>
                     <connections>
-                        <outlet property="loginTextField" destination="h9F-U3-7sQ" id="yoT-CU-tfG"/>
+                        <outlet property="emailTextField" destination="Fq9-nS-L4s" id="Uis-DF-fb7"/>
                         <outlet property="passwordTextField" destination="DIe-Bk-xAZ" id="Bth-mn-pMK"/>
+                        <outlet property="signInButton" destination="1zF-jN-VuY" id="CQ0-Xd-rMj"/>
+                        <outlet property="signUpButton" destination="lCA-gv-fkX" id="kVq-hE-7JH"/>
+                        <outlet property="usernameTextField" destination="h9F-U3-7sQ" id="atQ-NJ-HZs"/>
+                        <outlet property="welcomeLabel" destination="d4j-cQ-rKr" id="FZd-7y-fu3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2671" y="66"/>
+            <point key="canvasLocation" x="2688" y="66"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="0Df-9f-rQ3">
@@ -104,16 +118,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="sxq-cG-4xr" kind="relationship" relationship="viewControllers" id="ubC-RF-Nts"/>
-                        <segue destination="f0n-Xf-sf8" kind="relationship" relationship="viewControllers" id="CSR-2F-2RV"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginSegue" id="jl5-vF-Jja"/>
+                        <segue destination="7hs-p3-gfB" kind="relationship" relationship="viewControllers" id="ubC-RF-Nts"/>
+                        <segue destination="1BX-g3-38e" kind="relationship" relationship="viewControllers" id="CSR-2F-2RV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voI-Oo-RKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3608.6956521739135" y="65.625"/>
         </scene>
-        <!--UserLogin-->
+        <!--Videos-->
         <scene sceneID="Y52-xs-EST">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="7hs-p3-gfB" customClass="VideoViewController" customModule="Cars_Test_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -137,33 +150,46 @@
                                     <constraint firstItem="fK0-Oq-ycC" firstAttribute="leading" secondItem="s29-YS-qWu" secondAttribute="leading" id="xTa-Le-WRD"/>
                                 </constraints>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIu-nI-xuA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="UserLogin" id="lht-rN-JtP">
+                                        <barButtonItem key="rightBarButtonItem" title="Logout" id="WUI-B3-0D3">
+                                            <connections>
+                                                <action selector="logOutAction:" destination="7hs-p3-gfB" id="dOv-HJ-MVX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ir3-7N-5e8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="s29-YS-qWu" firstAttribute="centerX" secondItem="VIu-nI-xuA" secondAttribute="centerX" id="SC3-tn-2oa"/>
+                            <constraint firstItem="VIu-nI-xuA" firstAttribute="leading" secondItem="vbE-7U-Uo1" secondAttribute="leading" id="Smd-bJ-jvr"/>
                             <constraint firstItem="Ir3-7N-5e8" firstAttribute="bottom" secondItem="s29-YS-qWu" secondAttribute="bottom" constant="146" id="UhB-45-y3u"/>
                             <constraint firstItem="s29-YS-qWu" firstAttribute="leading" secondItem="Ir3-7N-5e8" secondAttribute="leading" constant="16" id="W98-Xb-0U6"/>
                             <constraint firstItem="Ir3-7N-5e8" firstAttribute="trailing" secondItem="s29-YS-qWu" secondAttribute="trailing" constant="16" id="r8Q-BS-n9d"/>
+                            <constraint firstItem="VIu-nI-xuA" firstAttribute="top" secondItem="Ir3-7N-5e8" secondAttribute="top" id="sng-Nv-Zdv"/>
                             <constraint firstItem="s29-YS-qWu" firstAttribute="centerY" secondItem="vbE-7U-Uo1" secondAttribute="centerY" id="yd4-lU-4pG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="UserLogin" id="Qg1-pA-bb5">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="WUI-B3-0D3">
-                            <connections>
-                                <action selector="logOutAction:" destination="7hs-p3-gfB" id="dOv-HJ-MVX"/>
-                            </connections>
-                        </barButtonItem>
+                    <tabBarItem key="tabBarItem" title="Videos" image="video" catalog="system" selectedImage="video" id="tSH-Kh-3iZ"/>
+                    <navigationItem key="navigationItem" id="Qg1-pA-bb5">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="gcg-Ny-Tpf"/>
                     </navigationItem>
                     <connections>
                         <outlet property="firstPlayerViewContainer" destination="fK0-Oq-ycC" id="wCS-J2-Ydg"/>
+                        <outlet property="navigationBar" destination="VIu-nI-xuA" id="ekN-bw-0Ef"/>
                         <outlet property="secondPlayerViewContainer" destination="dce-GU-5Wy" id="xpB-OB-K4e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWK-Aa-8hT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5657.971014492754" y="-281.25"/>
+            <point key="canvasLocation" x="4748" y="-281"/>
         </scene>
-        <!--All cars-->
+        <!--Cars-->
         <scene sceneID="Ob5-p0-ujF">
             <objects>
                 <tableViewController modalPresentationStyle="fullScreen" id="1BX-g3-38e" customClass="CarsTableViewController" customModule="Cars_Test_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -171,8 +197,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="mKf-kN-J7e">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="All cars" id="KTU-mp-pU4">
+                                    <barButtonItem key="rightBarButtonItem" title="Filter" id="TZE-MP-3X1">
+                                        <connections>
+                                            <action selector="openFilter:" destination="1BX-g3-38e" id="pdP-qd-2vQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <view key="tableFooterView" contentMode="scaleToFill" id="NXU-I7-xYs">
-                            <rect key="frame" x="0.0" y="167" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="211" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data for API wasn`t updated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTh-Iy-gkF">
@@ -192,7 +231,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="carCell" rowHeight="100" id="JiZ-Qr-Psx" customClass="CarTableViewCell" customModule="Cars_Test_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="JiZ-Qr-Psx" id="6Vb-8A-ftQ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -235,20 +274,15 @@
                             <outlet property="delegate" destination="1BX-g3-38e" id="bJF-aj-1a7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="All cars" id="eM0-H6-Kn1">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="TZE-MP-3X1">
-                            <connections>
-                                <action selector="openFilter:" destination="1BX-g3-38e" id="pdP-qd-2vQ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Cars" image="car.2" catalog="system" selectedImage="car.2.fill" id="J7g-CD-ODE"/>
                     <connections>
+                        <outlet property="navigationBar" destination="mKf-kN-J7e" id="hLl-X3-Imt"/>
                         <outlet property="timerLabel" destination="gTh-Iy-gkF" id="cv4-8s-F5g"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8O-WR-Ja6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5657.971014492754" y="466.07142857142856"/>
+            <point key="canvasLocation" x="4747.826086956522" y="466.07142857142856"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="8rU-9e-eYm">
@@ -333,45 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JC5-L4-Tfp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6479.7101449275369" y="465.40178571428567"/>
-        </scene>
-        <!--Videos-->
-        <scene sceneID="DOx-RG-fjF">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sxq-cG-4xr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Videos" image="video" catalog="system" selectedImage="video" id="tSH-Kh-3iZ"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="91v-Th-1mS">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="7hs-p3-gfB" kind="relationship" relationship="rootViewController" id="x7i-bO-8Cd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="68d-dn-G56" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4747.826086956522" y="-281.25"/>
-        </scene>
-        <!--Cars-->
-        <scene sceneID="yLg-9y-Zrl">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f0n-Xf-sf8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cars" image="car.2" catalog="system" selectedImage="car.2.fill" id="J7g-CD-ODE"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dj5-gD-vKa">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="1BX-g3-38e" kind="relationship" relationship="rootViewController" id="vLp-xW-Wbn"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jC5-ZG-wAn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4747.826086956522" y="466.07142857142856"/>
+            <point key="canvasLocation" x="5571" y="466"/>
         </scene>
     </scenes>
     <resources>
@@ -381,12 +377,6 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

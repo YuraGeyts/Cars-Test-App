@@ -7,6 +7,8 @@ target 'Cars Test App' do
 
   # Pods for Cars Test App
 pod 'DropDown'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
 
 end
 
@@ -16,5 +18,7 @@ target 'Cars Test App iPad' do
 
   # Pods for Cars Test App iPad
 pod 'DropDown'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
 
 end
