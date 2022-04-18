@@ -9,8 +9,6 @@ import UIKit
 import AVKit
 
 class VideoViewController: UIViewController {
-
-    @IBOutlet weak var navigationBar: UINavigationBar!
     
     @IBOutlet weak var firstPlayerViewContainer: UIView!
     @IBOutlet weak var secondPlayerViewContainer: UIView!
@@ -127,7 +125,7 @@ class VideoViewController: UIViewController {
         DispatchQueue.main.async {
             guard let userLogin = LoginManager.userLogin else { return }
             print("try to print userLogin \(userLogin)")
-            self.navigationBar.topItem?.title = "Hello, \(userLogin)"
+            self.title = "Hello, \(userLogin)"
         }
     }
     

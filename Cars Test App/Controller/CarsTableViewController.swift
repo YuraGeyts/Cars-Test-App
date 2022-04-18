@@ -13,8 +13,6 @@ class CarsTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
     
     private let urlString = "http://filehost.feelsoftware.com/jsonplaceholder/cars-api.php"
     
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    
     var cars: [Car]?
     
     var counter = 0
@@ -137,11 +135,11 @@ class CarsTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         if selectedFilter == filterComponents[0] {
             print("WITHOUT FILTER")
             isFiltering = false
-            navigationBar.topItem?.title = "All cars"
+            self.title = "All cars"
         } else {
             isFiltering = true
             print(selectedFilter)
-            navigationBar.topItem?.title = selectedFilter
+            self.title = selectedFilter
             let selectedState = selectedFilter.lowercased()
             
             guard let cars = cars else { return }
