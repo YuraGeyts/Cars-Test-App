@@ -8,12 +8,15 @@
 import Foundation
 
 class NetworkManager {
+    
+    private let urlString = "http://filehost.feelsoftware.com/jsonplaceholder/cars-api.php"
+    
     private init(){}
     static let shared = NetworkManager()
     
     var onCompletion: ((Cars) -> ())?
     
-    func performRequest(withURLString urlString: String) {
+    func getCars() {
         guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, response, error in

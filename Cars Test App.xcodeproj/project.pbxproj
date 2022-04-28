@@ -17,6 +17,7 @@
 		3A08D53A27F8C79D0025C516 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A08D53927F8C79D0025C516 /* LoginManager.swift */; };
 		3A34CDE92800A0FD000C8C23 /* LogoutAndUsername.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34CDE82800A0FD000C8C23 /* LogoutAndUsername.swift */; };
 		3A4A739628020C2900FB6B8C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4A739528020C2900FB6B8C /* InfoViewController.swift */; };
+		3A7979DF280E042D004D2112 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7979DE280E042D004D2112 /* PasswordResetViewController.swift */; };
 		3A89868A27F91416000E819E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A89868927F91416000E819E /* InfoViewController.swift */; };
 		3A8E07F827F6EFDA008EE2C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E07F727F6EFDA008EE2C3 /* AppDelegate.swift */; };
 		3A8E07FA27F6EFDA008EE2C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E07F927F6EFDA008EE2C3 /* SceneDelegate.swift */; };
@@ -60,6 +61,7 @@
 		3A08D53927F8C79D0025C516 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		3A34CDE82800A0FD000C8C23 /* LogoutAndUsername.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAndUsername.swift; sourceTree = "<group>"; };
 		3A4A739528020C2900FB6B8C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		3A7979DE280E042D004D2112 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		3A89868927F91416000E819E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		3A8E07F427F6EFDA008EE2C3 /* Cars Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cars Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8E07F727F6EFDA008EE2C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				3A8E07FB27F6EFDA008EE2C3 /* LoginViewController.swift */,
+				3A7979DE280E042D004D2112 /* PasswordResetViewController.swift */,
 				3AAE6BF127FB7C120049B7FA /* TabBarViewController.swift */,
 				3A8E080B27F762A0008EE2C3 /* VideoViewController.swift */,
 				3A8E081327F79D0B008EE2C3 /* CarsTableViewController.swift */,
@@ -472,6 +475,7 @@
 				3A8E07FC27F6EFDA008EE2C3 /* LoginViewController.swift in Sources */,
 				3A89868A27F91416000E819E /* InfoViewController.swift in Sources */,
 				3A08D53A27F8C79D0025C516 /* LoginManager.swift in Sources */,
+				3A7979DF280E042D004D2112 /* PasswordResetViewController.swift in Sources */,
 				3A8E07F827F6EFDA008EE2C3 /* AppDelegate.swift in Sources */,
 				3A8E081427F79D0B008EE2C3 /* CarsTableViewController.swift in Sources */,
 				3A8E07FA27F6EFDA008EE2C3 /* SceneDelegate.swift in Sources */,

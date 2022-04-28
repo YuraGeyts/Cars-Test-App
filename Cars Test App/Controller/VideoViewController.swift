@@ -9,14 +9,15 @@ import UIKit
 import AVKit
 import Firebase
 
+enum VideoStrings: String {
+    case firstVideo = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4"
+    case secondVideo = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4"
+}
+
 class VideoViewController: UIViewController {
     
     @IBOutlet weak var firstPlayerViewContainer: UIView!
     @IBOutlet weak var secondPlayerViewContainer: UIView!
-    
-    
-    var firstVideo = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4"
-    let secondVideo = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4"
     
     var topPlayer: AVPlayer?
     var bottomPlayer: AVPlayer?
@@ -25,8 +26,24 @@ class VideoViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadView(notification:)), name: Notification.Name("ReloadView"), object: nil)
 
+        
         getAndShowUserLogin()
+        
         //Add gestureRecogniser
+        setupGestureRecogniser()
+
+        topPlayer = showVideoInView(uiView: firstPlayerViewContainer, videoURL: VideoStrings.firstVideo.rawValue)
+        bottomPlayer = showVideoInView(uiView: secondPlayerViewContainer, videoURL: VideoStrings.secondVideo.rawValue)
+    }
+    
+    /***********************OBJ-C func********************************/
+    //-----------------Restart viewDidLoad----------------------------------------------------
+    @objc func reloadView(notification: NSNotification) {
+        self.viewDidLoad()
+    }
+    
+    //--------------------------Gesture recogniser--------------------------------------------------
+    func setupGestureRecogniser() {
         let firstPlayerTap = UITapGestureRecognizer(target: self, action: #selector(self.firstViewTap))
         firstPlayerViewContainer.addGestureRecognizer(firstPlayerTap)
 
@@ -46,18 +63,8 @@ class VideoViewController: UIViewController {
 
         secondPlayerViewContainer.isUserInteractionEnabled = true
         secondPlayerTap.require(toFail: secondPlayerDoubleTap)
-
-        topPlayer = showVideoInView(uiView: firstPlayerViewContainer, videoURL: firstVideo)
-        bottomPlayer = showVideoInView(uiView: secondPlayerViewContainer, videoURL: secondVideo)
     }
     
-    /***********************OBJ-C func********************************/
-    //-----------------Restart viewDidLoad----------------------------------------------------
-    @objc func reloadView(notification: NSNotification) {
-        self.viewDidLoad()
-    }
-    
-    //--------------------------Tap function--------------------------------------------------
     @objc func firstViewTap() {
         playOrPause(player: topPlayer)
     }
@@ -125,12 +132,14 @@ class VideoViewController: UIViewController {
     }
     
     //---------------------Getting user login async-------------------------------------------
-    
+    //show login from firebase
     private func getAndShowUserLogin() {
         DispatchQueue.main.async {
-            guard let userLogin = LoginManager.userLogin else { return }
-            print("try to print userLogin \(userLogin)")
-            self.title = "Hello, \(userLogin)"
+            let user = Auth.auth().currentUser
+            if let user = user {
+                let email = user.email
+                self.title = email
+            }
         }
     }
     

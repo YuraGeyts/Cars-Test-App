@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var passwordResetButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,10 +92,13 @@ class LoginViewController: UIViewController {
                     switch errCode {
                     case .wrongPassword :
                         self.showAlert(message: "Wrong password")
+                        self.passwordResetButton.isHidden = false
                     case .invalidEmail:
                         self.showAlert(message: "Invalid email")
+                        self.passwordResetButton.isHidden = false
                     case .userNotFound:
                         self.showAlert(message: "User not found")
+                        self.passwordResetButton.isHidden = false
                     @unknown default:
                         print("Some default error")
                     }

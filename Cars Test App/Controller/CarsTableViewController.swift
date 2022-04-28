@@ -9,10 +9,6 @@ import UIKit
 
 class CarsTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
-    
-    private let urlString = "http://filehost.feelsoftware.com/jsonplaceholder/cars-api.php"
-    
     var cars: [Car]?
     
     var counter = 0
@@ -43,7 +39,7 @@ class CarsTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
     
     //MARK: - URL Request func
     private func performURLRequest() {
-        NetworkManager.shared.performRequest(withURLString: urlString)
+        NetworkManager.shared.getCars()
         
         NetworkManager.shared.onCompletion = { result in
             DispatchQueue.main.async {
@@ -98,7 +94,7 @@ class CarsTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         self.present(infoView, animated: true, completion: nil)
     }
     
-    //MARK: - AlertView
+    //MARK: - FilterView
     var filteredCars: [Car] = []
     var isFiltering = false
     
@@ -133,7 +129,6 @@ class CarsTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         filteredCars = []
         
         if selectedFilter == filterComponents[0] {
-            print("WITHOUT FILTER")
             isFiltering = false
             self.title = "All cars"
         } else {
